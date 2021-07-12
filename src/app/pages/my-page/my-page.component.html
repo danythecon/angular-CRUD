@@ -1,0 +1,44 @@
+<h1>dany's page</h1>
+<div class='col-4'>
+    <form #postForm="ngForm" (ngSubmit)="onSubmit(postForm)">
+        <div class="mb-3">
+        <label for="brand" class="form-label">Enter Brand</label>
+        <input   name='brand' ngModel type="text" class="form-control" id="brand" aria-describedby="brand"/>
+        </div>
+        <div class="mb-3">
+        <label for="color" class="form-label">Color</label>
+        <input type="text" name='color' ngModel class="form-control" id="color">
+        </div>
+        <div class="mb-3">
+            <label for="color" class="form-label">Cost</label>
+            <input type="number" name='cost' ngModel class="form-control" id="color">
+            </div>
+        <button  type="submit" class="btn btn-primary">Create</button>
+    </form>
+</div>
+
+<!-- <button (click)="thisIsATest()">get everything</button> -->
+<button (click)='getAllCars()' class='btn btn-primary'>View All Cars</button>
+
+<div *ngIf='this.theConData'>
+<table   class="table table-dark">
+    <thead>
+      <tr>
+        <th scope="col">Number</th>
+        <th scope="col">Brand</th>
+        <th scope="col">Color</th>
+        <th scope="col">Price</th>
+      </tr>
+    </thead>
+    <tbody *ngFor='let i of theConData'>
+        <tr>
+            <th scope="row">{{i.id}}</th>
+            <td>{{i.brand}}</td>
+            <td>{{i.color}}</td>
+            <td>{{i.cost}}</td>
+            <button (click)='thisIsATest($event)'>update</button>
+           <button  (click)='testare($event)'>confirm</button>
+        </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,867 @@
+<!--begin::Brand-->
+<div class="brand flex-column-auto" id="kt_brand" [ngClass]="brandClasses">
+    <!--begin::Logo-->
+    <a routerLink="/" class="brand-logo">
+        <img alt="Logo" [attr.src]="headerLogo"/>
+    </a>
+    <!--end::Logo-->
+
+    <ng-container *ngIf="asideSelfMinimizeToggle">
+        <button class="brand-toggle btn btn-sm px-0" id="kt_aside_toggle">
+      <span [inlineSVG]=" './assets/media/svg/icons/Navigation/Angle-double-left.svg'" cacheSVG="true"
+            class="svg-icon svg-icon-xl">
+      </span>
+        </button>
+    </ng-container>
+</div>
+<!--end::Brand-->
+
+<!--begin::Aside Menu-->
+<div class="aside-menu-wrapper flex-column-fluid" id="kt_aside_menu_wrapper">
+    <ng-container *ngIf="disableAsideSelfDisplay">
+        <!--begin::Header Logo-->
+        <a routerLink="/">
+            <img alt="Logo" [attr.src]="headerLogo"/>
+        </a>
+        <!--end::Header Logo-->
+    </ng-container>
+    <!--begin::Menu Container-->
+    <div
+            id="kt_aside_menu"
+            class="aside-menu"
+            [ngClass]="asideMenuCSSClasses"
+            data-menu-vertical="1"
+            [attr.data-menu-scroll]="asideMenuScroll"
+            [attr.data-menu-dropdown]="asideMenuDropdown"
+            data-menu-dropdown-timeout="500"
+    >
+        <!-- begin::Menu Nav -->
+        <ul class="menu-nav" [ngClass]="ulCSSClasses">
+            <!-- CRM -->
+            <!-- begin::section -->
+            <li class="menu-section">
+                <h4 class="menu-text">CRM</h4>
+                <i class="menu-icon flaticon-more-v2"></i>
+            </li>
+            <!-- end:: section -->
+
+            <!-- Produse -->
+            <!-- begin::1 Level -->
+            <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover"
+                routerLinkActive="menu-item-open">
+                <a class="menu-link menu-toggle" href="/material" routerLinkActive="active">
+                    <span [inlineSVG]="'./assets/media/svg/icons/Design/Cap-2.svg'" cacheSVG="true"
+                          class="svg-icon menu-icon"></span>
+                    <span class="menu-text">Produse</span>
+                    <i class="menu-arrow"></i>
+                </a>
+                <div class="menu-submenu">
+                    <i class="menu-arrow"></i>
+                    <ul class="menu-subnav">
+                        <li class="menu-item menu-item-parent" aria-haspopup="true">
+                            <span class="menu-link"><span class="menu-text">Produse</span></span>
+                        </li>
+                        <!-- Adauga Produs -->
+                        <li class="menu-item" aria-haspopup="true" routerLinkActive="menu-item-active">
+                            <a class="menu-link" routerLink="/user-profile" routerLinkActive="active">
+          <span [inlineSVG]="'./assets/media/svg/icons/Communication/Add-user.svg'" cacheSVG="true"
+                class="svg-icon menu-icon"></span>
+                                <span class="menu-text">Adauga produs</span>
+                            </a>
+                        </li>
+                        <!-- Lista Produse -->
+                        <li class="menu-item" aria-haspopup="true" routerLinkActive="menu-item-active">
+                            <a class="menu-link" routerLink="/user-profile" routerLinkActive="active">
+          <span
+                  [inlineSVG]="'./assets/media/svg/icons/Communication/Add-user.svg'"
+                  cacheSVG="true"
+                  class="svg-icon menu-icon"
+          ></span>
+                                <span class="menu-text">Lista produse</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <!-- end::1 Level -->
+
+            <!-- Contacte -->
+            <!-- begin::1 Level -->
+            <li class="menu-item menu-item-submenu"
+                aria-haspopup="true"
+                data-menu-toggle="hover"
+                routerLinkActive="menu-item-open"
+            >
+                <a class="menu-link menu-toggle"
+                   href="/material"
+                   routerLinkActive="active"
+                >
+          <span [inlineSVG]="'./assets/media/svg/icons/Design/Cap-2.svg'"
+                cacheSVG="true"
+                class="svg-icon menu-icon"
+          ></span>
+                    <span class="menu-text">Contacte</span>
+                    <i class="menu-arrow"></i>
+                </a>
+                <div class="menu-submenu">
+                    <i class="menu-arrow"></i>
+                    <ul class="menu-subnav">
+                        <li class="menu-item menu-item-parent" aria-haspopup="true">
+              <span class="menu-link">
+                <span class="menu-text">Contacte</span>
+              </span>
+                        </li>
+                        <!-- Adauga Contact -->
+                        <li class="menu-item"
+                            aria-haspopup="true"
+                            routerLinkActive="menu-item-active"
+                        >
+                            <a class="menu-link"
+                               routerLink="/user-profile"
+                               routerLinkActive="active"
+                            >
+          <span
+                  [inlineSVG]="'./assets/media/svg/icons/Communication/Add-user.svg'"
+                  cacheSVG="true"
+                  class="svg-icon menu-icon"
+          ></span>
+                                <span class="menu-text">Adauga contact</span>
+                            </a>
+                        </li>
+                        <!-- Lista Contacte -->
+                        <li class="menu-item"
+                            aria-haspopup="true"
+                            routerLinkActive="menu-item-active"
+                        >
+                            <a class="menu-link"
+                               routerLink="/user-profile"
+                               routerLinkActive="active"
+                            >
+          <span
+                  [inlineSVG]="'./assets/media/svg/icons/Communication/Add-user.svg'"
+                  cacheSVG="true"
+                  class="svg-icon menu-icon"
+          ></span>
+                                <span class="menu-text">Lista contacte</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <!-- end::1 Level -->
+
+            <!-- Oferte -->
+            <!-- begin::1 Level -->
+            <li class="menu-item menu-item-submenu"
+                aria-haspopup="true"
+                data-menu-toggle="hover"
+                routerLinkActive="menu-item-open"
+            >
+                <a class="menu-link menu-toggle"
+                   href="/material"
+                   routerLinkActive="active"
+                >
+          <span
+                  [inlineSVG]="'./assets/media/svg/icons/Design/Cap-2.svg'"
+                  cacheSVG="true"
+                  class="svg-icon menu-icon"
+          ></span>
+                    <span class="menu-text">Oferte</span>
+                    <i class="menu-arrow"></i>
+                </a>
+                <div class="menu-submenu">
+                    <i class="menu-arrow"></i>
+                    <ul class="menu-subnav">
+                        <li class="menu-item menu-item-parent" aria-haspopup="true">
+              <span class="menu-link">
+                <span class="menu-text">Oferte</span>
+              </span>
+                        </li>
+                        <!-- Adauga Oferta -->
+                        <li class="menu-item"
+                            aria-haspopup="true"
+                            routerLinkActive="menu-item-active"
+                        >
+                            <a class="menu-link"
+                               routerLink="/user-profile"
+                               routerLinkActive="active"
+                            >
+          <span
+                  [inlineSVG]="'./assets/media/svg/icons/Communication/Add-user.svg'"
+                  cacheSVG="true"
+                  class="svg-icon menu-icon"
+          ></span>
+                                <span class="menu-text">Adauga oferta</span>
+                            </a>
+                        </li>
+                        <!-- Lista Oferte -->
+                        <li class="menu-item"
+                            aria-haspopup="true"
+                            routerLinkActive="menu-item-active"
+                        >
+                            <a class="menu-link"
+                               routerLink="/user-profile"
+                               routerLinkActive="active"
+                            >
+          <span
+                  [inlineSVG]="'./assets/media/svg/icons/Communication/Add-user.svg'"
+                  cacheSVG="true"
+                  class="svg-icon menu-icon"
+          ></span>
+                                <span class="menu-text">Lista oferte</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <!-- end::1 Level -->
+
+            <!-- Contract -->
+            <!-- begin::1 Level -->
+            <li class="menu-item menu-item-submenu"
+                aria-haspopup="true"
+                data-menu-toggle="hover"
+                routerLinkActive="menu-item-open"
+            >
+                <a class="menu-link menu-toggle"
+                   href="/material"
+                   routerLinkActive="active"
+                >
+          <span
+                  [inlineSVG]="'./assets/media/svg/icons/Design/Cap-2.svg'"
+                  cacheSVG="true"
+                  class="svg-icon menu-icon"
+          ></span>
+                    <span class="menu-text">Contracte</span>
+                    <i class="menu-arrow"></i>
+                </a>
+                <div class="menu-submenu">
+                    <i class="menu-arrow"></i>
+                    <ul class="menu-subnav">
+                        <li class="menu-item menu-item-parent" aria-haspopup="true">
+              <span class="menu-link">
+                <span class="menu-text">Contracte</span>
+              </span>
+                        </li>
+                        <!-- Adauga Contract -->
+                        <li class="menu-item"
+                            aria-haspopup="true"
+                            routerLinkActive="menu-item-active"
+                        >
+                            <a class="menu-link"
+                               routerLink="/user-profile"
+                               routerLinkActive="active"
+                            >
+          <span
+                  [inlineSVG]="'./assets/media/svg/icons/Communication/Add-user.svg'"
+                  cacheSVG="true"
+                  class="svg-icon menu-icon"
+          ></span>
+                                <span class="menu-text">Adauga contract</span>
+                            </a>
+                        </li>
+                        <!-- Lista Contracte -->
+                        <li
+                                class="menu-item"
+                                aria-haspopup="true"
+                                routerLinkActive="menu-item-active"
+                        >
+                            <a
+                                    class="menu-link"
+                                    routerLink="/user-profile"
+                                    routerLinkActive="active"
+                            >
+          <span
+                  [inlineSVG]="'./assets/media/svg/icons/Communication/Add-user.svg'"
+                  cacheSVG="true"
+                  class="svg-icon menu-icon"
+          ></span>
+                                <span class="menu-text">Lista contracte</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <!-- end::1 Level -->
+
+            <!-- ERP -->
+            <!-- begin::section -->
+            <li class="menu-section">
+                <h4 class="menu-text">ERP</h4>
+                <i class="menu-icon flaticon-more-v2"></i>
+            </li>
+            <!-- end:: section -->
+
+            <!-- Proiecte -->
+            <!-- begin::1 Level -->
+            <li
+                    class="menu-item menu-item-submenu"
+                    aria-haspopup="true"
+                    data-menu-toggle="hover"
+                    routerLinkActive="menu-item-open"
+            >
+                <a
+                        class="menu-link menu-toggle"
+                        href="/material"
+                        routerLinkActive="active"
+                >
+          <span
+                  [inlineSVG]="'./assets/media/svg/icons/Design/Cap-2.svg'"
+                  cacheSVG="true"
+                  class="svg-icon menu-icon"
+          ></span>
+                    <span class="menu-text">Proiecte</span>
+                    <i class="menu-arrow"></i>
+                </a>
+                <div class="menu-submenu">
+                    <i class="menu-arrow"></i>
+                    <ul class="menu-subnav">
+                        <li class="menu-item menu-item-parent" aria-haspopup="true">
+              <span class="menu-link">
+                <span class="menu-text">Proiecte</span>
+              </span>
+                        </li>
+                        <!-- Adauga Produs -->
+                        <li
+                                class="menu-item"
+                                aria-haspopup="true"
+                                routerLinkActive="menu-item-active"
+                        >
+                            <a
+                                    class="menu-link"
+                                    routerLink="/user-profile"
+                                    routerLinkActive="active"
+                            >
+          <span
+                  [inlineSVG]="'./assets/media/svg/icons/Communication/Add-user.svg'"
+                  cacheSVG="true"
+                  class="svg-icon menu-icon"
+          ></span>
+                                <span class="menu-text">Adauga proiect</span>
+                            </a>
+                        </li>
+                        <!-- Lista Produse -->
+                        <li
+                                class="menu-item"
+                                aria-haspopup="true"
+                                routerLinkActive="menu-item-active"
+                        >
+                            <a
+                                    class="menu-link"
+                                    routerLink="/user-profile"
+                                    routerLinkActive="active"
+                            >
+          <span
+                  [inlineSVG]="'./assets/media/svg/icons/Communication/Add-user.svg'"
+                  cacheSVG="true"
+                  class="svg-icon menu-icon"
+          ></span>
+                                <span class="menu-text">Lista proiecte</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <!-- end::1 Level -->
+
+            <!-- Tasks -->
+            <!-- begin::1 Level -->
+            <li
+                    class="menu-item menu-item-submenu"
+                    aria-haspopup="true"
+                    data-menu-toggle="hover"
+                    routerLinkActive="menu-item-open"
+            >
+                <a
+                        class="menu-link menu-toggle"
+                        href="/material"
+                        routerLinkActive="active"
+                >
+          <span
+                  [inlineSVG]="'./assets/media/svg/icons/Design/Cap-2.svg'"
+                  cacheSVG="true"
+                  class="svg-icon menu-icon"
+          ></span>
+                    <span class="menu-text">Tasks</span>
+                    <i class="menu-arrow"></i>
+                </a>
+                <div class="menu-submenu">
+                    <i class="menu-arrow"></i>
+                    <ul class="menu-subnav">
+                        <li class="menu-item menu-item-parent" aria-haspopup="true">
+              <span class="menu-link">
+                <span class="menu-text">Tasks</span>
+              </span>
+                        </li>
+                        <!-- Adauga Task -->
+                        <li
+                                class="menu-item"
+                                aria-haspopup="true"
+                                routerLinkActive="menu-item-active"
+                        >
+                            <a
+                                    class="menu-link"
+                                    routerLink="/user-profile"
+                                    routerLinkActive="active"
+                            >
+          <span
+                  [inlineSVG]="'./assets/media/svg/icons/Communication/Add-user.svg'"
+                  cacheSVG="true"
+                  class="svg-icon menu-icon"
+          ></span>
+                                <span class="menu-text">Adauga task</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <!-- end::1 Level -->
+
+            <!-- Directive -->
+            <!-- begin::1 Level -->
+            <li
+                    class="menu-item menu-item-submenu"
+                    aria-haspopup="true"
+                    data-menu-toggle="hover"
+                    routerLinkActive="menu-item-open"
+            >
+                <a
+                        class="menu-link menu-toggle"
+                        href="/material"
+                        routerLinkActive="active"
+                >
+          <span
+                  [inlineSVG]="'./assets/media/svg/icons/Design/Cap-2.svg'"
+                  cacheSVG="true"
+                  class="svg-icon menu-icon"
+          ></span>
+                    <span class="menu-text">Directive</span>
+                    <i class="menu-arrow"></i>
+                </a>
+                <div class="menu-submenu">
+                    <i class="menu-arrow"></i>
+                    <ul class="menu-subnav">
+                        <li class="menu-item menu-item-parent" aria-haspopup="true">
+              <span class="menu-link">
+                <span class="menu-text">Directive</span>
+              </span>
+                        </li>
+                        <!-- Adauga Directiva -->
+                        <li
+                                class="menu-item"
+                                aria-haspopup="true"
+                                routerLinkActive="menu-item-active"
+                        >
+                            <a
+                                    class="menu-link"
+                                    routerLink="/user-profile"
+                                    routerLinkActive="active"
+                            >
+          <span
+                  [inlineSVG]="'./assets/media/svg/icons/Communication/Add-user.svg'"
+                  cacheSVG="true"
+                  class="svg-icon menu-icon"
+          ></span>
+                                <span class="menu-text">Adauga directiva</span>
+                            </a>
+                        </li>
+                        <!-- Lista Produse -->
+                        <li
+                                class="menu-item"
+                                aria-haspopup="true"
+                                routerLinkActive="menu-item-active"
+                        >
+                            <a
+                                    class="menu-link"
+                                    routerLink="/user-profile"
+                                    routerLinkActive="active"
+                            >
+          <span
+                  [inlineSVG]="'./assets/media/svg/icons/Communication/Add-user.svg'"
+                  cacheSVG="true"
+                  class="svg-icon menu-icon"
+          ></span>
+                                <span class="menu-text">Lista directive</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <!-- end::1 Level -->
+
+            <!-- Proceduri -->
+            <!-- begin::1 Level -->
+            <li
+                    class="menu-item menu-item-submenu"
+                    aria-haspopup="true"
+                    data-menu-toggle="hover"
+                    routerLinkActive="menu-item-open"
+            >
+                <a
+                        class="menu-link menu-toggle"
+                        href="/material"
+                        routerLinkActive="active"
+                >
+          <span
+                  [inlineSVG]="'./assets/media/svg/icons/Design/Cap-2.svg'"
+                  cacheSVG="true"
+                  class="svg-icon menu-icon"
+          ></span>
+                    <span class="menu-text">Proceduri</span>
+                    <i class="menu-arrow"></i>
+                </a>
+                <div class="menu-submenu">
+                    <i class="menu-arrow"></i>
+                    <ul class="menu-subnav">
+                        <li class="menu-item menu-item-parent" aria-haspopup="true">
+              <span class="menu-link">
+                <span class="menu-text">Proceduri</span>
+              </span>
+                        </li>
+                        <!-- Adauga Procedura -->
+                        <li
+                                class="menu-item"
+                                aria-haspopup="true"
+                                routerLinkActive="menu-item-active"
+                        >
+                            <a
+                                    class="menu-link"
+                                    routerLink="/user-profile"
+                                    routerLinkActive="active"
+                            >
+          <span
+                  [inlineSVG]="'./assets/media/svg/icons/Communication/Add-user.svg'"
+                  cacheSVG="true"
+                  class="svg-icon menu-icon"
+          ></span>
+                                <span class="menu-text">Adauga procedura</span>
+                            </a>
+                        </li>
+                        <!-- Lista Produse -->
+                        <li
+                                class="menu-item"
+                                aria-haspopup="true"
+                                routerLinkActive="menu-item-active"
+                        >
+                            <a
+                                    class="menu-link"
+                                    routerLink="/user-profile"
+                                    routerLinkActive="active"
+                            >
+          <span
+                  [inlineSVG]="'./assets/media/svg/icons/Communication/Add-user.svg'"
+                  cacheSVG="true"
+                  class="svg-icon menu-icon"
+          ></span>
+                                <span class="menu-text">Lista proceduri</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <!-- end::1 Level -->
+
+            <!-- Feedback -->
+            <!-- begin::1 Level -->
+            <li
+                    class="menu-item menu-item-submenu"
+                    aria-haspopup="true"
+                    data-menu-toggle="hover"
+                    routerLinkActive="menu-item-open"
+            >
+                <a
+                        class="menu-link menu-toggle"
+                        href="/material"
+                        routerLinkActive="active"
+                >
+          <span
+                  [inlineSVG]="'./assets/media/svg/icons/Design/Cap-2.svg'"
+                  cacheSVG="true"
+                  class="svg-icon menu-icon"
+          ></span>
+                    <span class="menu-text">Feedback</span>
+                    <i class="menu-arrow"></i>
+                </a>
+                <div class="menu-submenu">
+                    <i class="menu-arrow"></i>
+                    <ul class="menu-subnav">
+                        <li class="menu-item menu-item-parent" aria-haspopup="true">
+              <span class="menu-link">
+                <span class="menu-text">Feedback</span>
+              </span>
+                        </li>
+                        <!-- Lista Feedback -->
+                        <li
+                                class="menu-item"
+                                aria-haspopup="true"
+                                routerLinkActive="menu-item-active"
+                        >
+                            <a
+                                    class="menu-link"
+                                    routerLink="/user-profile"
+                                    routerLinkActive="active"
+                            >
+          <span
+                  [inlineSVG]="'./assets/media/svg/icons/Communication/Add-user.svg'"
+                  cacheSVG="true"
+                  class="svg-icon menu-icon"
+          ></span>
+                                <span class="menu-text">Lista feedback</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <!-- end::1 Level -->
+
+
+            <!-- Misc -->
+            <!-- begin::section -->
+            <li class="menu-section">
+                <h4 class="menu-text">Misc</h4>
+                <i class="menu-icon flaticon-more-v2"></i>
+            </li>
+            <!-- end:: section -->
+
+            <!-- Utilizatori -->
+            <!-- begin::1 Level -->
+            <li
+                    class="menu-item menu-item-submenu"
+                    aria-haspopup="true"
+                    data-menu-toggle="hover"
+                    routerLinkActive="menu-item-open"
+            >
+                <a
+                        class="menu-link menu-toggle"
+                        href="/material"
+                        routerLinkActive="active"
+                >
+          <span
+                  [inlineSVG]="'./assets/media/svg/icons/Design/Cap-2.svg'"
+                  cacheSVG="true"
+                  class="svg-icon menu-icon"
+          ></span>
+                    <span class="menu-text">Utilizatori</span>
+                    <i class="menu-arrow"></i>
+                </a>
+                <div class="menu-submenu">
+                    <i class="menu-arrow"></i>
+                    <ul class="menu-subnav">
+                        <li class="menu-item menu-item-parent" aria-haspopup="true">
+              <span class="menu-link">
+                <span class="menu-text">Utilizatori</span>
+              </span>
+                        </li>
+                        <!-- Adauga Utilizator -->
+                        <li
+                                class="menu-item"
+                                aria-haspopup="true"
+                                routerLinkActive="menu-item-active"
+                        >
+                            <a
+                                    class="menu-link"
+                                    routerLink="/user-profile"
+                                    routerLinkActive="active"
+                            >
+          <span
+                  [inlineSVG]="'./assets/media/svg/icons/Communication/Add-user.svg'"
+                  cacheSVG="true"
+                  class="svg-icon menu-icon"
+          ></span>
+                                <span class="menu-text">Adauga utilizator</span>
+                            </a>
+                        </li>
+                        <!-- Lista Produse -->
+                        <li
+                                class="menu-item"
+                                aria-haspopup="true"
+                                routerLinkActive="menu-item-active"
+                        >
+                            <a
+                                    class="menu-link"
+                                    routerLink="/user-profile"
+                                    routerLinkActive="active"
+                            >
+          <span
+                  [inlineSVG]="'./assets/media/svg/icons/Communication/Add-user.svg'"
+                  cacheSVG="true"
+                  class="svg-icon menu-icon"
+          ></span>
+                                <span class="menu-text">Lista utilizatori</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <!-- end::1 Level -->
+
+            <!-- Rapoarte -->
+            <!-- begin::1 Level -->
+            <li
+                    class="menu-item menu-item-submenu"
+                    aria-haspopup="true"
+                    data-menu-toggle="hover"
+                    routerLinkActive="menu-item-open"
+            >
+                <a
+                        class="menu-link menu-toggle"
+                        href="/material"
+                        routerLinkActive="active"
+                >
+          <span
+                  [inlineSVG]="'./assets/media/svg/icons/Design/Cap-2.svg'"
+                  cacheSVG="true"
+                  class="svg-icon menu-icon"
+          ></span>
+                    <span class="menu-text">Rapoarte</span>
+                    <i class="menu-arrow"></i>
+                </a>
+                <div class="menu-submenu">
+                    <i class="menu-arrow"></i>
+                    <ul class="menu-subnav">
+                        <li class="menu-item menu-item-parent" aria-haspopup="true">
+              <span class="menu-link">
+                <span class="menu-text">Rapoarte</span>
+              </span>
+                        </li>
+                        <!-- Adauga Raport -->
+                        <li
+                                class="menu-item"
+                                aria-haspopup="true"
+                                routerLinkActive="menu-item-active"
+                        >
+                            <a
+                                    class="menu-link"
+                                    routerLink="/user-profile"
+                                    routerLinkActive="active"
+                            >
+          <span
+                  [inlineSVG]="'./assets/media/svg/icons/Communication/Add-user.svg'"
+                  cacheSVG="true"
+                  class="svg-icon menu-icon"
+          ></span>
+                                <span class="menu-text">Adauga raport</span>
+                            </a>
+                        </li>
+                        <!-- Lista Rapoarte -->
+                        <li
+                                class="menu-item"
+                                aria-haspopup="true"
+                                routerLinkActive="menu-item-active"
+                        >
+                            <a
+                                    class="menu-link"
+                                    routerLink="/user-profile"
+                                    routerLinkActive="active"
+                            >
+          <span
+                  [inlineSVG]="'./assets/media/svg/icons/Communication/Add-user.svg'"
+                  cacheSVG="true"
+                  class="svg-icon menu-icon"
+          ></span>
+                                <span class="menu-text">Lista rapoarte</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <!-- end::1 Level -->
+
+            <!-- Profilul Meu -->
+            <!-- begin::1 Level -->
+            <li
+                    class="menu-item menu-item-submenu"
+                    aria-haspopup="true"
+                    data-menu-toggle="hover"
+                    routerLinkActive="menu-item-open"
+            >
+                <a
+                        class="menu-link menu-toggle"
+                        href="/material"
+                        routerLinkActive="active"
+                >
+          <span
+                  [inlineSVG]="'./assets/media/svg/icons/Design/Cap-2.svg'"
+                  cacheSVG="true"
+                  class="svg-icon menu-icon"
+          ></span>
+                    <span class="menu-text">Profilul meu</span>
+                    <i class="menu-arrow"></i>
+                </a>
+                <div class="menu-submenu">
+                    <i class="menu-arrow"></i>
+                    <ul class="menu-subnav">
+                        <li class="menu-item menu-item-parent" aria-haspopup="true">
+              <span class="menu-link">
+                <span class="menu-text">Profilul meu</span>
+              </span>
+                        </li>
+                        <!-- Editare profil -->
+                        <li
+                                class="menu-item"
+                                aria-haspopup="true"
+                                routerLinkActive="menu-item-active"
+                        >
+                            <a
+                                    class="menu-link"
+                                    routerLink="/user-profile"
+                                    routerLinkActive="active"
+                            >
+          <span
+                  [inlineSVG]="'./assets/media/svg/icons/Communication/Add-user.svg'"
+                  cacheSVG="true"
+                  class="svg-icon menu-icon"
+          ></span>
+                                <span class="menu-text">Editare profil</span>
+                            </a>
+                        </li>
+                        <!-- Pontajul meu -->
+                        <li
+                                class="menu-item"
+                                aria-haspopup="true"
+                                routerLinkActive="menu-item-active"
+                        >
+                            <a
+                                    class="menu-link"
+                                    routerLink="/user-profile"
+                                    routerLinkActive="active"
+                            >
+          <span
+                  [inlineSVG]="'./assets/media/svg/icons/Communication/Add-user.svg'"
+                  cacheSVG="true"
+                  class="svg-icon menu-icon"
+          ></span>
+                                <span class="menu-text">Pontajul meu</span>
+                            </a>
+                        </li>
+                        <!-- Cereri concediu -->
+                        <li
+                                class="menu-item"
+                                aria-haspopup="true"
+                                routerLinkActive="menu-item-active"
+                        >
+                            <a
+                                    class="menu-link"
+                                    routerLink="/user-profile"
+                                    routerLinkActive="active"
+                            >
+          <span
+                  [inlineSVG]="'./assets/media/svg/icons/Communication/Add-user.svg'"
+                  cacheSVG="true"
+                  class="svg-icon menu-icon"
+          ></span>
+                                <span class="menu-text">Cereri concediu</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <!-- end::1 Level -->
+
+
+        </ul>
+        <!-- end::Menu Nav -->
+    </div>
+    <!--end::Menu Container-->
+</div>
+<!--end::Aside Menu-->
