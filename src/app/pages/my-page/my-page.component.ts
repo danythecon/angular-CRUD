@@ -3,38 +3,58 @@ import {HttpClient} from '@angular/common/http';
 import { NgForm, NumberValueAccessor } from '@angular/forms';
 import { TheConService } from 'src/app/the-con.service';
 import { FormsModule } from '@angular/forms';
-
+import {interval} from 'rxjs';
+import { ConstantPool } from '@angular/compiler';
 @Component({
   selector: 'app-my-page',
   templateUrl: './my-page.component.html',
   styleUrls: ['./my-page.component.scss']
 })
 export class MyPageComponent implements OnInit {
-  @Input ()
+  
+  
   theConData : any = [];
-
+  success = false;
   esteGata = false
   carBrand :string = '';
   carColor : string = '';
   carCost : string = '';
-  constructor(private thecon: TheConService) {   
+  constructor(private thecon: TheConService) { 
+    // console.log('page is loaded')
+    // this.getAllCars()
   }
   
-  ngOnInit(): void { 
+  ngOnInit(){ 
+    this.getAllCars()
+    // interval(1000).subscribe(count => {
+    //   console.log(count)
+    // })
   }
   
-  getAllCars(){
-     this.thecon.cars().subscribe(response => {
-      this.theConData = response
-    })
-    console.log(this.theConData)
-  }
  
   onSubmit(postForm: NgForm){
-    console.log(postForm.value)
-     this.thecon.createCar(postForm.value).subscribe(response => {
+    this.thecon.createCar(postForm.value).subscribe((response : any) => {
+      
+      if(response.success === true){
+        this.success = response.success
+      }  
     })  
   }
+  getAllCars(){
+    this.thecon.cars().subscribe((response : any)=> {
+      this.success = response.success
+      // if(response.success === true){
+         this.theConData = response
+      // }
+      // else {
+      //   console.log('test')
+      // }
+        this.success = response.success
+        console.log('test')
+     //  console.log(this.success)
+   })
+   console.log(this.theConData)
+ }
   thisIsATest(e : any){
     const newBrand = e.target.parentNode.childNodes[1].innerHTML = '<input />' 
     const newColor = e.target.parentNode.childNodes[2].innerHTML = '<input />'
