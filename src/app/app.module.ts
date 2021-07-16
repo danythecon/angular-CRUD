@@ -17,6 +17,7 @@ import { HighlightModule, HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
 import { SplashScreenModule } from './_metronic/partials/layout/splash-screen/splash-screen.module';
 // #fake-start#
 import { FakeAPIService } from './_fake/fake-api.service';
+import { TableComponent } from './table/table.component';
 // #fake-end#
 
 function appInitializer(authService: AuthService) {
@@ -39,6 +40,7 @@ function appInitializer(authService: AuthService) {
     HighlightModule,
     ClipboardModule,
     FormsModule,
+    
     // #fake-start#
     environment.isMockEnabled
       ? HttpClientInMemoryWebApiModule.forRoot(FakeAPIService, {

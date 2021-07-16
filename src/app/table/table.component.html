@@ -1,0 +1,40 @@
+
+<div *ngIf='true'>
+    <table   class="table table-dark">
+        <thead>
+          <tr>
+            <th scope="col">Number</th>
+            <th scope="col">Brand</th>
+            <th scope="col">Color</th>
+            <th scope="col">Price</th>
+          </tr>
+        </thead>
+        <tbody >
+            <tr *ngFor='let i of tableData'>
+                <th scope="row">{{i.id}}</th>
+                <td >{{i.brand}}</td>
+              
+                <td>{{i.color}}</td>
+                
+                <td>{{i.cost}}</td>
+              
+                <button (click)='onDelete($event)' class='btn btn-danger'>sterge</button>
+                <button (click)='onUpdate($event)' class='btn btn-primary'>update</button>
+                <button (click)='onView($event)' class='btn btn-success' [innerText]="view ?  'close' : 'view'">view</button>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div *ngIf='view' class='view'>
+        <div></div>
+        <div>
+            <label>Car brand</label>
+            <h1 >{{carView.brand}}</h1>
+            <label>Car color</label>
+            <h1>{{carView.color}}</h1>
+            <label>Car cost</label>
+            <h1>{{carView.cost}}</h1>
+        </div>
+    </div>
+

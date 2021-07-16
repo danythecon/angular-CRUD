@@ -23,6 +23,7 @@ import { AsideDynamicComponent } from './_layout/components/aside-dynamic/aside-
 import { HeaderMenuDynamicComponent } from './_layout/components/header/header-menu-dynamic/header-menu-dynamic.component';
 import { MyPageComponent } from './my-page/my-page.component';
 import { FormsModule } from '@angular/forms';
+import { TableComponent } from '../table/table.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { FormsModule } from '@angular/forms';
     AsideDynamicComponent,
     HeaderMenuDynamicComponent,
     MyPageComponent,
+    TableComponent
   ],
   imports: [
     CommonModule,
@@ -49,7 +51,7 @@ import { FormsModule } from '@angular/forms';
     NgbProgressbarModule,
     CoreModule,
     SubheaderModule,
-    FormsModule
+    FormsModule,
   ],
 })
 export class LayoutModule { }

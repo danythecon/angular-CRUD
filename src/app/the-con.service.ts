@@ -7,9 +7,7 @@ import { HttpClient } from '@angular/common/http';
 export class TheConService {
 
   constructor(private http: HttpClient) { }
-  laHoha(){
-    return this.http.get('https://jsonplaceholder.typicode.com/todos/1')
-  }
+ 
   cars(){
     return this.http.get('/api/getAllCars')
   }
@@ -18,5 +16,8 @@ export class TheConService {
   }
   update(data: any){
     return this.http.put('/api/updateCar', data)
+  }
+  deleteCar(data: any){
+    return this.http.delete(`/api/deleteCar?carId=${data}` )
   }
 }

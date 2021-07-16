@@ -11,16 +11,20 @@
         </div>
         <div class="mb-3">
             <label for="color" class="form-label">Cost</label>
-            <input type="number" name='cost' ngModel class="form-control" id="color">
+            <input type="number" name='cost' ngModel class="form-control" id="price">
             </div>
         <button  type="submit" class="btn btn-primary">Create</button>
     </form>
 </div>
+<div *ngIf='esteGata' class="alert alert-danger" role="alert">
+  This is a danger alert—check it out!
+</div>
   <!-- <h1>{{success}}</h1> -->
 <!-- <button (click)="thisIsATest()">get everything</button> -->
-<button (click)='getAllCars()' class='btn btn-primary'>View All Cars</button>
+<!-- <button (click)='getAllCars()' class='btn btn-primary'>View All Cars</button> -->
+<!-- <button (click)='testParent()' class='btn btn-primary'>View All Cars</button> -->
 
-<div *ngIf='this.theConData'>
+<!-- <div *ngIf='success'>
 <table   class="table table-dark">
     <thead>
       <tr>
@@ -38,9 +42,16 @@
             <td>{{i.cost}}</td>
             <button (click)='thisIsATest($event)'>update</button>
            <button  (click)='testare($event)'>confirm</button>
+           <button (click)='delete($event)'>delete</button>
         </tr>
     </tbody>
   </table>
-</div>
+</div> -->
+<!-- <button (click)='delete()' class='btn btn-danger'>delete all </button> -->
 <!-- <div *ngIf="success === true">
 <h1 *ngFor="let i of theConData">{{i.brand}}</h1> -->
+
+<app-table [tableData]='theConData'  ></app-table>
+
+
+<!-- (proba)='proba($event)' -->

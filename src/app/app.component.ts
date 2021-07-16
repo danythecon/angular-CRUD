@@ -17,13 +17,14 @@ import {SplashScreenService} from './_metronic/partials/layout/splash-screen/spl
 import {Router, NavigationEnd, NavigationError} from '@angular/router';
 import {Subscription} from 'rxjs';
 import {TableExtendedService} from './_metronic/shared/crud-table';
+import { TableComponent } from './table/table.component';
 
 @Component({
     // tslint:disable-next-line:component-selector
     selector: 'body[root]',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
+    // changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent implements OnInit, OnDestroy {
     private unsubscribe: Subscription[] = []; // Read more: => https://brianflove.com/2016/12/11/anguar-2-unsubscribe-observables/
@@ -53,7 +54,7 @@ export class AppComponent implements OnInit, OnDestroy {
                 this.tableService.setDefaults();
                 // hide splash screen
                 this.splashScreenService.hide();
-
+                
                 // scroll to top on every route change
                 window.scrollTo(0, 0);
 
